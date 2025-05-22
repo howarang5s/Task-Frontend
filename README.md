@@ -32,7 +32,7 @@ A responsive and interactive web application for managing your tasks, built with
 ---
 
 # Clone the frontend repo
-git clone <YOUR_FRONTEND_REPO_URL>
+git clone https://github.com/howarang5s/Task-Frontend.git
 cd <YOUR_FRONTEND_REPO_FOLDER_NAME>
 
 # Install dependencies
