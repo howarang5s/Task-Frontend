@@ -1,0 +1,81 @@
+/* src/components/TaskFilterAndSearch.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column; /* Default to column for small screens */
+    gap: 1rem; /* Consistent spacing */
+    margin-bottom: 1.5rem; /* Increased bottom margin for separation */
+    align-items: stretch; /* Stretch items to fill container width on small screens */
+    justify-content: flex-end; /* Align to end if space allows */
+    padding: 0 1.5rem; /* Consistent horizontal padding for all screen sizes */
+}
+
+/* For medium screens and up (md:flex-row) */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        align-items: center; /* Align items to center when in a row */
+        justify-content: flex-end; /* Keep aligning to end */
+        /* Removed padding: 0; here to keep the 1.5rem padding from above */
+    }
+}
+
+.searchInput {
+    width: 100%; /* Full width on small screens */
+    max-width: none; /* Remove max-width on small screens */
+    padding: 0.625rem 1rem; /* Increased padding */
+    border-radius: 0.5rem; /* More rounded corners */
+    border: 1px solid #cbd5e0; /* Softer border color */
+    font-size: 0.9375rem; /* Slightly smaller font for input */
+    color: #2d3748; /* Darker text color */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* For medium screens and up */
+@media (min-width: 768px) {
+    .searchInput {
+        max-width: 20rem; /* Re-introduce max-width on larger screens */
+    }
+}
+
+.searchInput::placeholder {
+    color: #a0aec0; /* Lighter placeholder text */
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #4299e1; /* Blue focus ring */
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5); /* Subtle blue shadow */
+}
+
+.statusSelect {
+    width: 100%; /* Full width on small screens */
+    padding: 0.625rem 1rem; /* Increased padding */
+    padding-right: 2.5rem; /* Increased right padding to prevent text overlap with arrow */
+    border: 1px solid #cbd5e0; /* Softer border color */
+    border-radius: 0.5rem; /* More rounded corners */
+    color: #2d3748; /* Darker text color */
+    background-color: #ffffff; /* Pure white background */
+    font-size: 0.9375rem; /* Slightly smaller font for select */
+    appearance: none; /* Remove default browser select arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd' /%3E%3C/svg%3E"); /* Custom SVG arrow */
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.25em 1.25em; /* Size of the SVG arrow */
+    cursor: pointer;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* For medium screens and up */
+@media (min-width: 768px) {
+    .statusSelect {
+        width: auto; /* Auto width on larger screens */
+        min-width: 10rem; /* Ensure a minimum width for the dropdown on larger screens */
+    }
+}
+
+.statusSelect:focus {
+    outline: none;
+    border-color: #4299e1; /* Blue focus ring */
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5); /* Subtle blue shadow */
+}

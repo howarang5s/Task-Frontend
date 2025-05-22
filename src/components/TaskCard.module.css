@@ -1,0 +1,132 @@
+/* src/components/TaskCard.module.css */
+
+/* Base styles for the TaskCard when it's used as a grid row item */
+/* These styles are now primarily for the internal layout within a grid cell.
+   The .gridRowItem class in TaskList.module.css will define the main row layout. */
+.card {
+    display: flex;
+    flex-direction: column; /* Keep internal elements stacked if not a grid item */
+    gap: 0.25rem; /* Reduced gap for compact table view */
+    cursor: default;
+    /* Removed: padding, border-radius, box-shadow, background-color, border, transition */
+    /* These will be handled by .gridRowItem in TaskList.module.css */
+}
+
+.overdueCard {
+    composes: card;
+    /* Specific overdue background/border will be handled by .gridRowItem combined with overdue logic */
+}
+
+/* Styles for individual "cells" within the TaskCard when it's a grid row */
+.cell {
+    /* Ensures content within a grid cell behaves correctly */
+    display: flex;
+    flex-direction: column; /* Stack content vertically within a cell if needed */
+    justify-content: center; /* Vertically center content */
+    text-align: center; /* Horizontally center text content within the cell */
+    /* No specific padding here, as .gridRowItem will define padding for the whole row */
+}
+
+.title {
+    font-size: 1rem; /* Adjusted for table view */
+    font-weight: 600;
+    color: #2d3748;
+    white-space: nowrap; /* Prevent wrapping in table cell */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if title is too long */
+}
+
+.description {
+    color: #4a5568;
+    font-size: 0.9rem; /* Adjusted for table view */
+    line-height: 1.4;
+    white-space: nowrap; /* Prevent wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.deadline {
+    font-size: 0.85rem; /* Adjusted for table view */
+    color: #718096;
+    white-space: nowrap;
+}
+
+.overdueDeadlineText {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
+/* Status styles are now defined here and used by TaskCard directly */
+.statusCell {
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.375rem;
+    display: inline-block; /* Allows padding and background to apply */
+    text-align: center;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.statusTodo {
+    composes: statusCell;
+    background-color: #e0f2fe; /* Light blue */
+    color: #0284c7; /* Darker blue */
+}
+
+.statusInProgress {
+    composes: statusCell;
+    background-color: #fef3c7; /* Light yellow */
+    color: #d97706; /* Darker yellow */
+}
+
+.statusDone {
+    composes: statusCell;
+    background-color: #d1fae5; /* Light green */
+    color: #059669; /* Darker green */
+}
+
+.actionButtons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center; /* Center buttons horizontally within the action cell */
+    width: 100%; /* Ensure it takes full width of the cell to center */
+}
+
+.buttonBase {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: none;
+    border: 1px solid transparent;
+}
+
+.editButton {
+    composes: buttonBase;
+    color: #d69e2e;
+    border-color: #ecc94b;
+}
+
+.editButton:hover {
+    background-color: #f6e05e;
+    color: #fff;
+    border-color: #f6e05e;
+    box-shadow: 0 2px 6px rgba(237, 137, 54, 0.2);
+}
+
+.deleteButton {
+    composes: buttonBase;
+    color: #e53e3e;
+    border-color: #fc8181;
+}
+
+.deleteButton:hover {
+    background-color: #fc8181;
+    color: #fff;
+    border-color: #fc8181;
+    box-shadow: 0 2px 6px rgba(229, 62, 62, 0.2);
+}

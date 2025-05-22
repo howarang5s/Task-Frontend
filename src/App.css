@@ -1,0 +1,35 @@
+/* src/App.module.css */
+
+.appContainer {
+    min-height: 100vh;
+    padding: 1.5rem; /* Increased padding */
+    font-family: 'Inter', sans-serif; /* Ensure consistent font */
+    background-color: #f3f4f6; /* Light gray background */
+}
+
+.mainContentWrapper {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the content */
+    background-color: #ffffff; /* Pure white background for the main card */
+    border-radius: 1rem; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Professional shadow */
+    padding: 2rem; /* Increased padding inside the main wrapper */
+}
+
+/* .taskColumns is removed as tasks are now displayed in a single table */
+
+.loadingMessage,
+.errorMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Take up most of the viewport height */
+    font-size: 1.25rem; /* text-xl */
+    color: #4a5568; /* Medium gray for loading */
+    text-align: center;
+}
+
+.errorMessage {
+    color: #e53e3e; /* Stronger red for errors */
+    font-weight: 600;
+}

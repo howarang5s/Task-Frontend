@@ -1,0 +1,122 @@
+/* src/components/Modals.module.css */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(30, 41, 59, 0.6); /* Slightly darker, more professional overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    backdrop-filter: blur(4px); /* Subtle blur effect */
+    -webkit-backdrop-filter: blur(4px); /* For Safari */
+}
+
+.modalContent {
+    background-color: #ffffff; /* Pure white background */
+    padding: 2rem; /* Ensure consistent padding on all sides */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    border-radius: 0.75rem; /* More rounded corners */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* More pronounced shadow */
+    max-width: 32rem; /* Slightly wider modal for better content display */
+    width: 100%;
+    margin: 0 1.5rem; /* Increased horizontal margin, ensures space on very small screens */
+    position: relative; /* Needed for absolute positioning of close button */
+    animation: fadeInScale 0.3s ease-out forwards; /* Add simple entry animation */
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modalHeader {
+    margin-bottom: 1.5rem; /* Increased margin */
+    padding-bottom: 1rem; /* Padding for the bottom border */
+    border-bottom: 1px solid #e0e0e0; /* Subtle separator line */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalTitle {
+    font-size: 1.75rem; /* Slightly larger title */
+    font-weight: 700;
+    color: #1a202c; /* Darker text for better contrast */
+}
+
+.modalDescription {
+    color: #4a5568; /* Softer gray for description */
+    font-size: 0.9375rem; /* Slightly larger text */
+    margin-top: 0.5rem; /* Increased margin */
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem; /* Increased gap between buttons */
+    margin-top: 2rem; /* More space above footer */
+}
+
+.buttonBase {
+    padding: 0.625rem 1.25rem; /* Slightly larger buttons */
+    border-radius: 0.5rem; /* Consistent border-radius */
+    transition: all 0.2s ease-in-out; /* Smooth transitions */
+    font-weight: 600; /* Semibold font weight */
+    cursor: pointer;
+    font-size: 0.9375rem; /* Consistent font size */
+}
+
+.buttonCancel {
+    composes: buttonBase;
+    border: 1px solid #cbd5e0; /* Softer border color */
+    color: #4a5568; /* Darker gray text */
+    background-color: #f7fafc; /* Light background */
+}
+
+.buttonCancel:hover {
+    background-color: #edf2f7; /* Slightly darker hover background */
+    border-color: #a0aec0; /* Darker border on hover */
+}
+
+.buttonDelete {
+    composes: buttonBase;
+    background-color: #e53e3e; /* Standard red */
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2), 0 2px 4px -1px rgba(239, 68, 68, 0.1); /* Subtle red shadow */
+}
+
+.buttonDelete:hover {
+    background-color: #c53030; /* Darker red on hover */
+    box-shadow: 0 6px 10px -2px rgba(239, 68, 68, 0.3), 0 3px 6px -2px rgba(239, 68, 68, 0.15);
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #a0aec0; /* Light gray color for the icon */
+    transition: color 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+    color: #4a5568; /* Darker gray on hover */
+}
+
+.closeButton svg {
+    width: 1.25rem; /* Size of the SVG icon */
+    height: 1.25rem;
+}

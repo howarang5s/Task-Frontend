@@ -1,0 +1,65 @@
+/* src/components/TaskManagementHeader.module.css */
+
+.headerContainer {
+    display: flex;
+    flex-direction: row; /* Default to row */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem; /* Increased margin for better spacing */
+    padding: 1.5rem 2rem; /* Increased padding for a more substantial header */
+    background-color: #f8f9fa; /* Light background for the header */
+    border-radius: 0.75rem; /* Rounded corners for the header container */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More pronounced shadow for depth */
+    border-bottom: none; /* Remove the bottom border as shadow provides separation */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+    .headerContainer {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+        gap: 1rem; /* Space between title and button */
+        padding: 1rem 1.5rem; /* Adjust padding for smaller screens */
+    }
+}
+
+.title {
+    font-size: 2.5rem; /* Even larger title for more prominence */
+    font-weight: 800; /* Extra bold */
+    color: #2c3e50; /* Darker, more professional blue-gray */
+    letter-spacing: -0.03em; /* Slightly tighter letter spacing */
+    line-height: 1.2; /* Adjust line height for better appearance */
+}
+
+/* Responsive font size for smaller screens */
+@media (max-width: 640px) {
+    .title {
+        font-size: 2rem; /* text-3xl on small screens */
+    }
+}
+
+.createButton {
+    background-image: linear-gradient(to right, #4a90e2 0%, #2563eb 100%); /* Blue gradient */
+    color: #fff;
+    font-weight: 600;
+    padding: 0.875rem 1.75rem; /* Increased padding for a larger, more clickable button */
+    border-radius: 0.75rem; /* More rounded corners */
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.2), 0 3px 7px -3px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+    border: none;
+    cursor: pointer;
+    font-size: 1.05rem; /* Slightly larger font size */
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 0.05em; /* Add slight letter spacing */
+}
+
+.createButton:hover {
+    background-image: linear-gradient(to right, #2563eb 0%, #4a90e2 100%); /* Reverse gradient on hover */
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3), 0 4px 8px -4px rgba(0, 0, 0, 0.15); /* Even stronger shadow */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.createButton:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.15), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+}
