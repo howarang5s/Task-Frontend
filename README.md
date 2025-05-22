@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+Task Management App - Frontend
+A responsive and interactive web application for managing your tasks, built with React and Redux Toolkit. This frontend consumes a separate backend API to perform CRUD operations on tasks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Features
+Task Creation: Easily add new tasks with a title, description, deadline, and initial status.
 
-## Available Scripts
+Task Viewing: View all tasks in a clean, tabular format.
 
-In the project directory, you can run:
+Task Editing: Modify existing task details (title, description, deadline, status) via a dedicated modal.
 
-### `npm start`
+Task Deletion: Confirm and delete tasks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Status Management: Tasks are categorized by status (To Do, In Progress, Done).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Filtering: Filter tasks by their status.
 
-### `npm test`
+Search: Search tasks by title or description.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Overdue Highlighting: Visually indicates tasks that are past their deadline.
 
-### `npm run build`
+Input Validation: Prevents empty/overly long titles/descriptions and duplicate titles within the same status group.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Responsive Design: Optimized for various screen sizes (desktop, tablet, mobile).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Centralized State Management: Utilizes Redux Toolkit for predictable state management.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🛠️ Technologies Used
+React: Frontend JavaScript library for building user interfaces.
 
-### `npm run eject`
+Redux Toolkit: Official, opinionated, batteries-included toolset for efficient Redux development.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+CSS Modules: For scoped and modular CSS styling.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Axios: Promise-based HTTP client for making API requests.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Lucide React: For lightweight and customizable icons.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+HTML5 & CSS3: Standard web technologies.
 
-## Learn More
+⚙️ Installation & Setup
+Follow these steps to get the frontend application running on your local machine.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Clone the repository:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+git clone <YOUR_FRONTEND_REPO_URL>
+cd <YOUR_FRONTEND_REPO_FOLDER_NAME>
 
-### Code Splitting
+(Replace <YOUR_FRONTEND_REPO_URL> and <YOUR_FRONTEND_REPO_FOLDER_NAME> with your actual repository URL and the folder name it creates.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Install dependencies:
 
-### Analyzing the Bundle Size
+npm install
+# or
+yarn install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Configure API Endpoint:
+Create a .env.local file in the root of your frontend project (where package.json is located) and add the backend API URL. This URL should point to your running backend server.
 
-### Making a Progressive Web App
+REACT_APP_API_BASE_URL=http://localhost:5000/task
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Note: If your backend is deployed, replace http://localhost:5000/task with your deployed backend's base URL.
 
-### Advanced Configuration
+Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm start
+# or
+yarn start
 
-### Deployment
+The application will open in your browser, usually at http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🖥️ Usage
+View Tasks: Tasks will be displayed in a table format.
 
-### `npm run build` fails to minify
+Add New Task: Click the "Create Task" button in the header.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Edit Task: Click the "Edit" icon (pencil) next to a task.
+
+Delete Task: Click the "Delete" icon (trash can) next to a task.
+
+Filter Tasks: Use the "Status" dropdown to filter tasks.
+
+Search Tasks: Type in the search bar to filter tasks by title or description.
+
+🤝 Contributing
+Contributions are welcome! If you have suggestions for improvements or find any issues, please open an issue or submit a pull request.
+
+📄 License
+This project is licensed under the MIT License.
